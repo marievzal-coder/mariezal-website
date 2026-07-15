@@ -11,6 +11,16 @@ document.querySelector('.slide-prev')?.addEventListener('click',()=>showFeatured
 
 const artistFilm=document.querySelector('.artist-film__video');
 const artistFilmSound=document.querySelector('.artist-film__sound');
+function keepArtistFilmPlaying(){
+  if(!artistFilm)return;
+  artistFilm.loop=true;
+  artistFilm.playsInline=true;
+  if(artistFilm.paused)artistFilm.play().catch(()=>{});
+}
+artistFilm?.addEventListener('ended',()=>{artistFilm.currentTime=0;keepArtistFilmPlaying()});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)keepArtistFilmPlaying()});
+window.addEventListener('pageshow',keepArtistFilmPlaying);
+keepArtistFilmPlaying();
 artistFilmSound?.addEventListener('click',()=>{
   if(!artistFilm)return;
   artistFilm.muted=!artistFilm.muted;
