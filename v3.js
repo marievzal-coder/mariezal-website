@@ -13,13 +13,22 @@ const artistFilm=document.querySelector('.artist-film__video');
 const artistFilmSound=document.querySelector('.artist-film__sound');
 function keepArtistFilmPlaying(){
   if(!artistFilm)return;
+  artistFilm.autoplay=true;
   artistFilm.loop=true;
   artistFilm.playsInline=true;
+  artistFilm.defaultMuted=true;
+  artistFilm.muted=true;
+  artistFilm.setAttribute('muted','');
+  artistFilm.setAttribute('playsinline','');
+  artistFilm.setAttribute('webkit-playsinline','');
   if(artistFilm.paused)artistFilm.play().catch(()=>{});
 }
+['loadedmetadata','loadeddata','canplay','canplaythrough','pause','stalled','suspend'].forEach(eventName=>artistFilm?.addEventListener(eventName,keepArtistFilmPlaying));
 artistFilm?.addEventListener('ended',()=>{artistFilm.currentTime=0;keepArtistFilmPlaying()});
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)keepArtistFilmPlaying()});
 window.addEventListener('pageshow',keepArtistFilmPlaying);
+window.addEventListener('load',keepArtistFilmPlaying);
+setInterval(keepArtistFilmPlaying,1200);
 keepArtistFilmPlaying();
 artistFilmSound?.addEventListener('click',()=>{
   if(!artistFilm)return;
