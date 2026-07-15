@@ -23,6 +23,17 @@
 @media(max-width:760px){.artist-film{height:88svh;min-height:650px}.artist-film__video{object-position:center center}.artist-film__veil{background:linear-gradient(0deg,rgba(6,5,4,.68) 0%,rgba(6,5,4,.08) 64%),linear-gradient(90deg,rgba(6,5,4,.32),transparent)}.artist-film__copy{left:7vw;right:7vw;top:auto;bottom:14vh;transform:none;max-width:none}.artist-film__copy h2{font-size:clamp(56px,16vw,78px);line-height:.86;margin-top:24px}.artist-film__sound{right:6vw;bottom:5vw}.artist-film__index{left:6vw;bottom:6.5vw}}
 @media(prefers-reduced-motion:reduce){.artist-film__video{display:none}.artist-film{background:url('assets/video/mariezal-film-cinematic-poster.jpg') center/cover no-repeat}}
 @media(prefers-reduced-motion:reduce){.home-hero .artist-film__video{display:block}}
+
+/* Artist profile — editorial presentation spread. */
+.about-presentation{background:#e9e5dd;min-height:calc(100svh - 82px);padding:clamp(28px,4vw,64px);gap:clamp(45px,7vw,120px);align-items:center}
+.about-portrait{margin:0;position:relative;align-self:stretch;min-height:680px;overflow:hidden;background:#ddd8cf}
+.about-portrait img{width:100%;height:100%;object-fit:cover;object-position:center 35%;filter:contrast(1.035)}
+.about-portrait figcaption{position:absolute;left:24px;bottom:20px;color:#fff;text-transform:uppercase;letter-spacing:.2em;font-size:8px;text-shadow:0 1px 15px rgba(0,0,0,.45)}
+.about-presentation .about-copy{padding:5vw 2vw 5vw 0;align-self:center}
+.about-presentation .about-copy h1{margin:28px 0 44px}
+.about-presentation .about-copy>p:not(.eyebrow){max-width:550px}
+.about-presentation blockquote{max-width:500px}
+@media(max-width:760px){.about-presentation{padding:0;gap:0}.about-portrait{min-height:0;height:72svh}.about-portrait img{object-position:center 30%}.about-presentation .about-copy{padding:20vw 7vw}.about-portrait figcaption{left:6vw;bottom:5vw}}
 @media(max-width:380px){.site-header nav{gap:14px!important}.site-header nav a{font-size:6.5px!important}.slider-head button{width:40px;height:40px}.slide h2{font-size:11vw}}
 .work-description{max-width:46ch;margin:14px 0 20px!important;font-size:12px!important;line-height:1.65!important;letter-spacing:.01em!important;text-transform:none!important;color:rgba(20,18,16,.72)}
 .work div>a{display:inline-flex;align-items:center;justify-content:center;margin-top:4px;padding:13px 18px!important;border:1px solid var(--ink)!important;transition:background .25s ease,color .25s ease}
