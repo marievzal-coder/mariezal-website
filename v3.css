@@ -5,6 +5,7 @@
 
 /* Full-bleed artist film — restrained, cinematic and intentionally editorial. */
 .artist-film{position:relative;min-height:100svh;height:clamp(760px,100svh,1100px);overflow:hidden;background:#070605;color:#fff;isolation:isolate}
+.home-hero__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%}
 .artist-film__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%;filter:none}
 .artist-film__veil{position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,5,4,.64) 0%,rgba(6,5,4,.12) 57%,rgba(6,5,4,.26) 100%),linear-gradient(0deg,rgba(6,5,4,.42),transparent 42%);z-index:1}
 .artist-film__copy{position:absolute;z-index:2;left:6vw;top:50%;transform:translateY(-48%);max-width:min(650px,72vw)}
@@ -21,6 +22,7 @@
 @media(max-width:760px){.site-header nav{gap:20px!important;scrollbar-width:none}.site-header nav::-webkit-scrollbar{display:none}.site-header nav a{font-size:7px;letter-spacing:.14em}.slide.active{grid-template-columns:minmax(0,1fr)}.slide img{height:auto;max-height:62vh}.slide h2{max-width:12ch;font-size:clamp(42px,12vw,62px);line-height:.94}.slider-head{gap:16px}.slider-head>div{display:flex;flex:0 0 auto}}
 @media(max-width:760px){.artist-film{height:88svh;min-height:650px}.artist-film__video{object-position:center center}.artist-film__veil{background:linear-gradient(0deg,rgba(6,5,4,.68) 0%,rgba(6,5,4,.08) 64%),linear-gradient(90deg,rgba(6,5,4,.32),transparent)}.artist-film__copy{left:7vw;right:7vw;top:auto;bottom:14vh;transform:none;max-width:none}.artist-film__copy h2{font-size:clamp(56px,16vw,78px);line-height:.86;margin-top:24px}.artist-film__sound{right:6vw;bottom:5vw}.artist-film__index{left:6vw;bottom:6.5vw}}
 @media(prefers-reduced-motion:reduce){.artist-film__video{display:none}.artist-film{background:url('assets/video/mariezal-film-cinematic-poster.jpg') center/cover no-repeat}}
+@media(prefers-reduced-motion:reduce){.home-hero .artist-film__video{display:block}}
 @media(max-width:380px){.site-header nav{gap:14px!important}.site-header nav a{font-size:6.5px!important}.slider-head button{width:40px;height:40px}.slide h2{font-size:11vw}}
 .work-description{max-width:46ch;margin:14px 0 20px!important;font-size:12px!important;line-height:1.65!important;letter-spacing:.01em!important;text-transform:none!important;color:rgba(20,18,16,.72)}
 .work div>a{display:inline-flex;align-items:center;justify-content:center;margin-top:4px;padding:13px 18px!important;border:1px solid var(--ink)!important;transition:background .25s ease,color .25s ease}
