@@ -8,7 +8,7 @@ backend:
 site_url: https://mariezal-art.netlify.app
 display_url: https://mariezal-art.netlify.app
 logo_url: https://mariezal-art.netlify.app/assets/video/mariezal-film-poster.jpg
-media_folder: mariezal-site/assets/uploads
+media_folder: assets/uploads
 public_folder: /assets/uploads
 
 collections:
@@ -17,7 +17,7 @@ collections:
     files:
       - name: artworks
         label: Original Works
-        file: mariezal-site/data/artworks.json
+        file: data/artworks.json
         format: json
         fields:
           - label: Artworks
