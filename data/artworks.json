@@ -1,0 +1,17 @@
+{
+  "artworks": [
+    {"title":"Between Worlds","status":"Available","dimensions":"50 × 35 in","image":"/assets/between-worlds.jpg","description":"A luminous figure stands at the threshold between the visible and the unknown. Surrounded by watchful, otherworldly guides, she becomes a portrait of inner awakening — the quiet moment when fear gives way to self-recognition.","featured":true,"type":"painting"},
+    {"title":"The Woman You Keep Hidden","status":"Available","dimensions":"24 × 36 in","image":"/assets/the-woman-you-keep-hidden-new.jpg","description":"","featured":false,"type":"painting"},
+    {"title":"The Art of Not Falling Apart","status":"Available","dimensions":"24 × 24 in","image":"/assets/source/img-034.jpg","description":"","featured":false,"type":"painting"},
+    {"title":"Sacred Guardians","status":"Available","dimensions":"24 × 36 in","image":"/assets/source/img-049.jpg","description":"","featured":false,"type":"painting"},
+    {"title":"The Gold Came After","status":"Available","dimensions":"14 × 11 in","image":"/assets/source/img-058.jpg","description":"","featured":false,"type":"painting"},
+    {"title":"Transition","status":"Available","dimensions":"24 × 36 in","image":"/assets/source/img-056.jpg","description":"","featured":false,"type":"painting"},
+    {"title":"Itachi","status":"Available","dimensions":"50 × 35 in","image":"/assets/source/img-059.jpg","description":"","featured":false,"type":"painting"},
+    {"title":"The Loudest Soul in the Room","status":"Available","dimensions":"14 × 11 in","image":"/assets/source/img-037.jpg","description":"","featured":false,"type":"painting"},
+    {"title":"Love Is the Beginning. Love Is the End.","status":"Available","dimensions":"24 × 36 in","image":"/assets/source/img-065.jpg","description":"","featured":false,"type":"painting"},
+    {"title":"Wild Spirit","status":"Available","dimensions":"","image":"/assets/source/img-072.png","description":"","featured":false,"type":"painting"},
+    {"title":"Sensuality","status":"Available","dimensions":"7 × 5 in","image":"/assets/portfolio-pages/page-06.jpg","description":"","featured":false,"type":"painting"},
+    {"title":"Heidendom","status":"Available","dimensions":"8 × 5 in","image":"/assets/source/img-069.jpg","description":"","featured":false,"type":"painting"},
+    {"title":"Hope","status":"Available","dimensions":"Wood · 74 × 15 × 11","image":"/assets/source/img-043.png","description":"","featured":false,"type":"sculpture"}
+  ]
+}

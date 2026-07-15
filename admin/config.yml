@@ -1,0 +1,34 @@
+backend:
+  name: github
+  repo: marievzal-coder/mariezal-website
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
+site_url: https://mariezal-art.netlify.app
+display_url: https://mariezal-art.netlify.app
+logo_url: https://mariezal-art.netlify.app/assets/video/mariezal-film-poster.jpg
+media_folder: mariezal-site/assets/uploads
+public_folder: /assets/uploads
+
+collections:
+  - name: catalog
+    label: Art Catalog
+    files:
+      - name: artworks
+        label: Original Works
+        file: mariezal-site/data/artworks.json
+        format: json
+        fields:
+          - label: Artworks
+            name: artworks
+            widget: list
+            summary: "{{fields.title}} — {{fields.status}}"
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Status, name: status, widget: select, options: [Available, Sold, Private Collection, Not for Sale]}
+              - {label: Dimensions, name: dimensions, widget: string, required: false}
+              - {label: Image, name: image, widget: image}
+              - {label: Description, name: description, widget: text, required: false}
+              - {label: Featured layout, name: featured, widget: boolean, default: false}
+              - {label: Type, name: type, widget: select, options: [painting, sculpture], default: painting}
