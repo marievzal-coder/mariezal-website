@@ -8,7 +8,23 @@ if(worksGrid){
       const classes=['work',item.featured?'work-featured':'',item.type==='sculpture'?'sculpture':''].filter(Boolean).join(' ');
       const description=item.description?`<p class="work-description">${item.description}</p>`:'';
       const action=item.status==='Available'?`<a href="contact.html?work=${encodeURIComponent(item.title)}">Buy this work</a>`:'';
-      return `<article class="${classes}"><img src="${item.image}" alt="${item.title} by Maryia Zaloznaya"><div><p>${meta}</p><h2>${item.title}</h2>${description}${action}</div></article>`;
+      const hasFilm=Boolean(item.video);
+      const image=hasFilm
+        ? `<button class="work-media" type="button" data-work-film="${item.video}" data-work-poster="${item.videoPoster||item.image}" data-work-title="${item.title}" aria-label="Watch the film for ${item.title}"><img src="${item.image}" alt="${item.title} by Maryia Zaloznaya"><span>View artwork film</span></button>`
+        : `<img src="${item.image}" alt="${item.title} by Maryia Zaloznaya">`;
+      return `<article class="${classes}">${image}<div><p>${meta}</p><h2>${item.title}</h2>${description}${action}</div></article>`;
     }).join('');
+    document.querySelectorAll('[data-work-film]').forEach(button=>button.addEventListener('click',()=>openWorkFilm(button)));
   }).catch(()=>{worksGrid.innerHTML='<p>The collection is temporarily unavailable.</p>'});
+}
+
+function openWorkFilm(button){
+  const modal=document.createElement('div');
+  modal.className='work-film-modal';
+  modal.innerHTML=`<div class="work-film-modal__backdrop" data-close-film></div><section class="work-film-modal__panel" role="dialog" aria-modal="true" aria-label="${button.dataset.workTitle} film"><button class="work-film-modal__close" type="button" data-close-film aria-label="Close">Close</button><video controls autoplay muted loop playsinline preload="metadata" poster="${button.dataset.workPoster}"><source src="${button.dataset.workFilm}" type="video/mp4"></video><p>${button.dataset.workTitle} · Studio film</p></section>`;
+  document.body.appendChild(modal);
+  document.body.classList.add('modal-open');
+  const close=()=>{modal.querySelector('video').pause();modal.remove();document.body.classList.remove('modal-open')};
+  modal.querySelectorAll('[data-close-film]').forEach(item=>item.addEventListener('click',close));
+  document.addEventListener('keydown',function escape(event){if(event.key==='Escape'){close();document.removeEventListener('keydown',escape)}},{once:true});
 }

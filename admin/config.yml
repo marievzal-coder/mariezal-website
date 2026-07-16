@@ -29,6 +29,8 @@ collections:
               - {label: Status, name: status, widget: select, options: [Available, Sold, Private Collection, Not for Sale]}
               - {label: Dimensions, name: dimensions, widget: string, required: false}
               - {label: Image, name: image, widget: image}
+              - {label: Artwork film, name: video, widget: file, required: false}
+              - {label: Film poster, name: videoPoster, widget: image, required: false}
               - {label: Description, name: description, widget: text, required: false}
               - {label: Featured layout, name: featured, widget: boolean, default: false}
-              - {label: Type, name: type, widget: select, options: [painting, sculpture], default: painting}
+              - {label: Type, name: type, widget: select, options: [painting, sculpture, vinyl], default: painting}
