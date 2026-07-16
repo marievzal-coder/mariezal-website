@@ -7,7 +7,7 @@ if(worksGrid){
       const meta=[item.status,item.dimensions].filter(Boolean).join(' Â· ');
       const classes=['work',item.featured?'work-featured':'',item.type==='sculpture'?'sculpture':''].filter(Boolean).join(' ');
       const description=item.description?`<p class="work-description">${item.description}</p>`:'';
-      const action=item.status==='Available'?`<a href="contact.html?work=${encodeURIComponent(item.title)}">Buy this work -†—</a>`:'';
+      const action=item.status==='Available'?`<a href="contact.html?work=${encodeURIComponent(item.title)}">Buy this work</a>`:'';
       return `<article class="${classes}"><img src="${item.image}" alt="${item.title} by Maryia Zaloznaya"><div><p>${meta}</p><h2>${item.title}</h2>${description}${action}</div></article>`;
     }).join('');
   }).catch(()=>{worksGrid.innerHTML='<p>The collection is temporarily unavailable.</p>'});
