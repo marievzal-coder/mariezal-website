@@ -41,3 +41,18 @@
 .work-featured{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);gap:clamp(28px,5vw,88px);align-items:center;padding-bottom:clamp(56px,8vw,120px)}
 .work-featured img{width:100%;height:min(82vh,900px);object-fit:contain;background:#eee9e1}
 @media(max-width:760px){.work-featured{grid-template-columns:1fr}.work-featured img{height:auto;max-height:75vh}.work-description{font-size:11px!important}}
+
+/* Originals desktop opener — an editorial portrait balances the wide canvas. */
+@media(min-width:761px){
+.works-page-head{min-height:calc(100svh - 72px);padding:clamp(64px,7vw,120px) 6vw;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(330px,.72fr);gap:clamp(48px,7vw,120px);align-items:center}
+.works-page-head__copy{align-self:center}
+.works-page-head h1{font-size:clamp(82px,9.2vw,148px);margin:34px 0 58px}
+.works-page-head__copy>p:last-child{max-width:470px;margin-left:35%;line-height:1.9}
+.works-page-head__portrait{margin:0;height:min(72vh,820px);position:relative;overflow:hidden;background:#171914;box-shadow:0 32px 80px rgba(25,19,14,.16)}
+.works-page-head__portrait img{width:100%;height:100%;object-fit:cover;object-position:center 37%}
+.works-page-head__portrait:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,6,5,.34),transparent 35%)}
+.works-page-head__portrait figcaption{position:absolute;z-index:1;left:24px;bottom:21px;color:#fff;text-transform:uppercase;letter-spacing:.19em;font-size:7px}
+.commission-portrait-primary{inset:4vw 8% 4vw 8%}
+.commission-portrait-primary img{object-position:center 25%}
+}
+@media(max-width:760px){.works-page-head__portrait{display:none}.works-page-head__copy>p:last-child{margin-left:0}}
