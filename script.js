@@ -7,7 +7,7 @@ if(worksGrid){
       const meta=[item.status,item.dimensions].filter(Boolean).join(' · ');
       const classes=['work',item.featured?'work-featured':'',item.type==='sculpture'?'sculpture':''].filter(Boolean).join(' ');
       const description=item.description?`<p class="work-description">${item.description}</p>`:'';
-      const action=item.status==='Available'?`<a href="contact.html?work=${encodeURIComponent(item.title)}">Buy this work</a>`:'';
+      const action=item.status==='Available'&&item.purchasable!==false?`<a href="contact.html?work=${encodeURIComponent(item.title)}">Buy this work</a>`:'';
       const hasFilm=Boolean(item.video);
       const image=hasFilm
         ? `<button class="work-media" type="button" data-work-film="${item.video}" data-work-poster="${item.videoPoster||item.image}" data-work-title="${item.title}" aria-label="Watch the film for ${item.title}"><img src="${item.image}" alt="${item.title} by Maryia Zaloznaya"><span>View artwork film</span></button>`
