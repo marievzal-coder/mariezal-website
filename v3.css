@@ -97,3 +97,30 @@
 .studio-learning__offers h3{font:400 clamp(30px,3.2vw,48px)/1.05 Italiana,serif;margin:0 0 18px}
 .studio-learning__offers p{grid-column:2;max-width:560px;line-height:1.85;margin:0}
 @media(max-width:760px){.studio-learning{grid-template-columns:1fr;padding:22vw 7vw;gap:18vw}.studio-learning__intro{position:static}.studio-learning h2{font-size:clamp(48px,14vw,68px)}.studio-learning__offers article{grid-template-columns:38px 1fr}.studio-learning__offers p{grid-column:2}}
+
+/* Collectible sticker packs */
+.stickers-hero{min-height:calc(100svh - 72px);padding:clamp(90px,10vw,150px) 7vw 8vw;display:grid;grid-template-columns:minmax(0,.9fr) minmax(380px,1.1fr);gap:8vw;align-items:center;background:#e9e5dd;color:var(--ink);overflow:hidden}
+.stickers-hero__copy{position:relative;z-index:2}
+.stickers-hero h1{font:400 clamp(68px,8.8vw,142px)/.82 Italiana,serif;letter-spacing:-.06em;margin:34px 0 42px}
+.stickers-hero h1 em,.sticker-preview h2 em{font-style:italic;color:#8a6839}
+.stickers-hero__copy>p:not(.eyebrow){max-width:520px;line-height:1.85;margin-bottom:34px}
+.stickers-hero__stage{aspect-ratio:1;position:relative;display:grid;place-items:center;background:radial-gradient(circle,#d6c5a7 0 29%,transparent 30%),linear-gradient(145deg,#1a1815,#050505);box-shadow:0 35px 100px rgba(29,22,15,.24);overflow:hidden}
+.stickers-hero__stage:before{content:"";position:absolute;inset:18px;border:1px solid rgba(219,190,137,.3)}
+.stickers-hero__stage p{position:relative;z-index:2;color:#eee7dc;text-align:center;font:clamp(35px,4.5vw,70px)/.8 Italiana,serif;letter-spacing:.08em}
+.stickers-hero__stage small{font:8px Inter,sans-serif;letter-spacing:.45em;text-transform:uppercase;color:#c6a46b}
+.sticker-shape{position:absolute;display:block;background:#d0a55c;border:9px solid #f0e8da;box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.sticker-shape--one{width:25%;aspect-ratio:1;border-radius:50%;left:7%;top:12%;transform:rotate(-11deg)}
+.sticker-shape--two{width:23%;aspect-ratio:.72;border-radius:48% 52% 44% 50%;right:6%;bottom:12%;background:#76313a;transform:rotate(14deg)}
+.sticker-shape--three{width:18%;aspect-ratio:1;right:10%;top:9%;background:#405f5a;clip-path:polygon(50% 0,62% 37%,100% 50%,62% 63%,50% 100%,38% 63%,0 50%,38% 37%)}
+.sticker-preview{padding:11vw 7vw;display:grid;grid-template-columns:1fr 1fr;gap:10vw;background:#f5f2ec}
+.sticker-preview h2{font:400 clamp(52px,6.6vw,100px)/.9 Italiana,serif;letter-spacing:-.05em;margin:30px 0 0}
+.sticker-preview__copy{padding-top:5vw}
+.sticker-preview__copy p{max-width:560px;line-height:1.9;margin:0 0 25px}
+.sticker-preview__copy .arrow-link{margin-top:20px}
+.sticker-values{padding:0 7vw 10vw;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#f5f2ec}
+.sticker-values article{border-top:1px solid var(--line);padding:32px 30px 45px 0}
+.sticker-values span{font-size:8px;letter-spacing:.2em;color:#846c49}
+.sticker-values h3{font:400 clamp(27px,3vw,42px)/1 Italiana,serif;margin:26px 0 18px}
+.sticker-values p{max-width:330px;line-height:1.75;color:#5f5a52}
+.sticker-cta{background:#d8cbb7}
+@media(max-width:760px){.stickers-hero{grid-template-columns:1fr;padding:120px 7vw 18vw}.stickers-hero h1{font-size:clamp(58px,17vw,84px)}.stickers-hero__stage{width:100%;margin-top:5vw}.sticker-preview{grid-template-columns:1fr;padding:22vw 7vw}.sticker-preview__copy{padding-top:0}.sticker-values{grid-template-columns:1fr;padding-bottom:20vw}.sticker-values article{padding-right:0}}
