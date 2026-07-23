@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Enter The Mariezal Arcana, an original interactive art experience by Maryia Zaloznaya.">
+<title>The Mariezal Arcana — Academy of Inner Arts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="arcana.css">
+</head>
+<body>
+<main class="arcana-world" data-scene="gate" data-order="none">
+<div class="arcana-bg"></div><div class="arcana-grain"></div><div class="arcana-embers" aria-hidden="true"></div>
+<header class="arcana-header">
+<a class="arcana-brand" href="index.html">MARIEZAL</a>
+<span>Academy of Inner Arts</span>
+<button class="arcana-sound" type="button"><i>◌</i> Enter sound</button>
+</header>
+
+<section class="arcana-scene active" data-panel="gate">
+<p class="arcana-kicker">An invitation has found you</p>
+<h1><small>The</small>Mariezal<br>Arcana</h1>
+<div class="arcana-rule"><i></i><b>✦</b><i></i></div>
+<p class="arcana-intro">There are arts we learn to make.<br>And arts that remake us.</p>
+<button class="arcana-primary" data-go="letter">Break the seal <span>↗</span></button>
+<p class="arcana-chapter">Prologue · The Unfinished Portrait</p>
+</section>
+
+<section class="arcana-scene" data-panel="letter">
+<button class="arcana-back" data-go="gate">← Return</button>
+<article class="arcana-letter">
+<p class="arcana-kicker">To the one between selves,</p>
+<h2>Your work has<br>been watching you.</h2>
+<p>Every image you have made left a door ajar. Every face you concealed learned your name. Tonight, the Academy asks only one question:</p>
+<blockquote>What will you become<br>when no one is looking?</blockquote>
+<p>Four Orders are waiting. None is assigned. The threshold recognises desire, not destiny.</p>
+<button class="arcana-primary dark" data-go="orders">Cross the threshold <span>→</span></button>
+</article>
+</section>
+
+<section class="arcana-scene" data-panel="orders">
+<p class="arcana-kicker">The Hall of Four Truths</p>
+<h2>Choose what calls you.</h2>
+<p class="arcana-sub">Not who you are. Who you are willing to become.</p>
+<div class="arcana-orders">
+<button class="arcana-order gold" data-order-choice="gold"><small>I</small><b>✦</b><span>Order of Gold</span><strong>The Alchemists</strong><em>I turn every fracture into light.</em><u>Enter this Order</u></button>
+<button class="arcana-order masks" data-order-choice="masks"><small>II</small><b>◐</b><span>Order of Masks</span><strong>The Shapeshifters</strong><em>I reveal what the world taught me to conceal.</em><u>Enter this Order</u></button>
+<button class="arcana-order elements" data-order-choice="elements"><small>III</small><b>△</b><span>Order of Elements</span><strong>The Untamed</strong><em>I create from the forces that move through me.</em><u>Enter this Order</u></button>
+<button class="arcana-order dreams" data-order-choice="dreams"><small>IV</small><b>◉</b><span>Order of Dreams</span><strong>The Seers</strong><em>I give form to what does not yet exist.</em><u>Enter this Order</u></button>
+</div>
+</section>
+
+<section class="arcana-scene arcana-trial" data-panel="trial">
+<button class="arcana-back" data-go="orders">← Four Orders</button>
+<div class="arcana-trial__copy">
+<p class="arcana-kicker">First practice · The golden fracture</p>
+<h2>Do not repair it.<br>Reveal where it changed.</h2>
+<p>Place seven lines of gold upon the unfinished portrait. Each mark becomes part of its memory.</p>
+<div class="arcana-progress"></div>
+<p class="arcana-whisper">The canvas remembers every touch.</p>
+<button class="arcana-primary arcana-finish" data-go="ending">Open the hidden door <span>→</span></button>
+</div>
+<button class="arcana-canvas" type="button" aria-label="Place a golden fracture"><i></i></button>
+</section>
+
+<section class="arcana-scene" data-panel="ending">
+<p class="arcana-kicker">The Academy has opened</p>
+<div class="arcana-chosen">✦</div>
+<h2>You entered through<br>the Order of <span>Gold</span>.</h2>
+<p class="arcana-intro">Your first symbol has been preserved.<br>The remaining rooms are still dreaming.</p>
+<button class="arcana-primary" data-restart>Begin again <span>↻</span></button>
+<a class="arcana-return" href="index.html">Return to the artist's world</a>
+</section>
+
+<footer class="arcana-footer"><span>MARIEZAL</span><span>Chapter 00 / 12</span><span>Move with intention</span></footer>
+</main>
+<script src="arcana.js"></script>
+</body>
+</html>

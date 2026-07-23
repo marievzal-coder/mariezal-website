@@ -28,3 +28,21 @@ function openWorkFilm(button){
   modal.querySelectorAll('[data-close-film]').forEach(item=>item.addEventListener('click',close));
   document.addEventListener('keydown',function escape(event){if(event.key==='Escape'){close();document.removeEventListener('keydown',escape)}},{once:true});
 }
+
+const SUPPORT_PAYMENT_LINK='';
+const supportButton=document.createElement('button');
+supportButton.type='button';
+supportButton.className='support-art-button';
+supportButton.innerHTML='<span>✦</span><b>Support the art</b>';
+supportButton.setAttribute('aria-label','Support Maryia’s art');
+if(SUPPORT_PAYMENT_LINK)document.body.appendChild(supportButton);
+supportButton.addEventListener('click',()=>{
+  const modal=document.createElement('div');
+  modal.className='support-modal';
+  modal.innerHTML=`<div class="support-modal__backdrop" data-support-close></div><section class="support-modal__panel" role="dialog" aria-modal="true" aria-labelledby="support-title"><button class="support-modal__close" type="button" data-support-close>Close</button><p class="eyebrow">Patronage · Independent art</p><h2 id="support-title">Help the next work<br><em>come into being.</em></h2><p>Your support funds materials, studio time and the creation of new paintings and immersive art experiences.</p><a class="support-pay" ${SUPPORT_PAYMENT_LINK?`href="${SUPPORT_PAYMENT_LINK}" target="_blank" rel="noopener"`:'aria-disabled="true"'}><span class="support-apple">Pay</span><small>Choose your contribution securely</small></a><p class="support-secure">Secure payment · Card and Apple Pay through Stripe</p></section>`;
+  document.body.appendChild(modal);
+  document.body.classList.add('modal-open');
+  const close=()=>{modal.remove();document.body.classList.remove('modal-open')};
+  modal.querySelectorAll('[data-support-close]').forEach(item=>item.addEventListener('click',close));
+  document.addEventListener('keydown',function escape(event){if(event.key==='Escape'){close();document.removeEventListener('keydown',escape)}},{once:true});
+});
