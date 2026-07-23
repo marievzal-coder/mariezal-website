@@ -9,6 +9,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="arcana.css">
+<style>
+.arcana-arrow{display:inline-block;width:17px;height:9px;position:relative}
+.arcana-arrow::before{content:"";position:absolute;left:0;top:4px;width:16px;border-top:1px solid currentColor}
+.arcana-arrow::after{content:"";position:absolute;right:0;top:1px;width:6px;height:6px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+.arcana-arrow--back{float:none!important;margin:0 8px 0 0!important;transform:rotate(180deg)}
+</style>
 </head>
 <body>
 <main class="arcana-world" data-scene="gate" data-order="none">
@@ -24,19 +30,19 @@
 <h1><small>The</small>Mariezal<br>Arcana</h1>
 <div class="arcana-rule"><i></i><b>✦</b><i></i></div>
 <p class="arcana-intro">There are arts we learn to make.<br>And arts that remake us.</p>
-<button class="arcana-primary" data-go="letter">Break the seal <span>↗</span></button>
+<button class="arcana-primary" data-go="letter">Break the seal <span class="arcana-arrow" aria-hidden="true"></span></button>
 <p class="arcana-chapter">Prologue · The Unfinished Portrait</p>
 </section>
 
 <section class="arcana-scene" data-panel="letter">
-<button class="arcana-back" data-go="gate">← Return</button>
+<button class="arcana-back" data-go="gate"><span class="arcana-arrow arcana-arrow--back" aria-hidden="true"></span> Return</button>
 <article class="arcana-letter">
 <p class="arcana-kicker">To the one between selves,</p>
 <h2>Your work has<br>been watching you.</h2>
 <p>Every image you have made left a door ajar. Every face you concealed learned your name. Tonight, the Academy asks only one question:</p>
 <blockquote>What will you become<br>when no one is looking?</blockquote>
 <p>Four Orders are waiting. None is assigned. The threshold recognises desire, not destiny.</p>
-<button class="arcana-primary dark" data-go="orders">Cross the threshold <span>→</span></button>
+<button class="arcana-primary dark" data-go="orders">Cross the threshold <span class="arcana-arrow" aria-hidden="true"></span></button>
 </article>
 </section>
 
@@ -53,14 +59,14 @@
 </section>
 
 <section class="arcana-scene arcana-trial" data-panel="trial">
-<button class="arcana-back" data-go="orders">← Four Orders</button>
+<button class="arcana-back" data-go="orders"><span class="arcana-arrow arcana-arrow--back" aria-hidden="true"></span> Four Orders</button>
 <div class="arcana-trial__copy">
 <p class="arcana-kicker">First practice · The golden fracture</p>
 <h2>Do not repair it.<br>Reveal where it changed.</h2>
 <p>Place seven lines of gold upon the unfinished portrait. Each mark becomes part of its memory.</p>
 <div class="arcana-progress"></div>
 <p class="arcana-whisper">The canvas remembers every touch.</p>
-<button class="arcana-primary arcana-finish" data-go="ending">Open the hidden door <span>→</span></button>
+<button class="arcana-primary arcana-finish" data-go="ending">Open the hidden door <span class="arcana-arrow" aria-hidden="true"></span></button>
 </div>
 <button class="arcana-canvas" type="button" aria-label="Place a golden fracture"><i></i></button>
 </section>
