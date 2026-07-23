@@ -86,3 +86,14 @@
 .support-pay small{text-align:left;font-size:9px;letter-spacing:.12em;text-transform:uppercase}
 .support-secure{text-transform:uppercase;letter-spacing:.16em;font-size:7px;margin-top:15px;color:#6e665a}
 @media(max-width:600px){.support-art-button{right:12px;bottom:12px;padding:11px 14px}.support-modal__panel{padding:58px 27px 42px}}
+
+/* Workshops and private art mentorship */
+.studio-learning{padding:11vw 7vw;background:#e5dfd5;color:var(--ink);display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:10vw;align-items:start}
+.studio-learning__intro{position:sticky;top:120px}
+.studio-learning h2{font:400 clamp(54px,7vw,104px)/.9 Italiana,serif;letter-spacing:-.035em;margin:32px 0}
+.studio-learning__intro>p:not(.eyebrow){max-width:530px;line-height:1.9;margin-bottom:38px}
+.studio-learning__offers article{border-top:1px solid var(--line);padding:28px 0 44px;display:grid;grid-template-columns:54px 1fr;column-gap:22px}
+.studio-learning__offers span{font-size:8px;letter-spacing:.18em;padding-top:8px}
+.studio-learning__offers h3{font:400 clamp(30px,3.2vw,48px)/1.05 Italiana,serif;margin:0 0 18px}
+.studio-learning__offers p{grid-column:2;max-width:560px;line-height:1.85;margin:0}
+@media(max-width:760px){.studio-learning{grid-template-columns:1fr;padding:22vw 7vw;gap:18vw}.studio-learning__intro{position:static}.studio-learning h2{font-size:clamp(48px,14vw,68px)}.studio-learning__offers article{grid-template-columns:38px 1fr}.studio-learning__offers p{grid-column:2}}
