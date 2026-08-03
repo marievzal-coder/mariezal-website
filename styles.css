@@ -52,6 +52,7 @@ html,body{overflow-x:hidden}main,section,footer,article,div{min-width:0}h1,h2,h3
   .site-header{grid-template-columns:auto minmax(0,1fr) auto;gap:clamp(22px,3vw,58px)}
   .site-header nav{justify-content:center;gap:clamp(15px,2vw,34px);min-width:0;white-space:nowrap}
   .work>img,.work-media img{width:100%;height:auto;max-height:78vh;object-fit:contain}
+  .work>img.desktop-full-art{height:auto;max-height:none;object-fit:contain;object-position:center}
 }
 @media(min-width:761px) and (max-width:1120px){
   .site-header{padding-left:2.2vw;padding-right:2.2vw;gap:18px}

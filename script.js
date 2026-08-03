@@ -52,7 +52,7 @@ if(form)form.addEventListener('submit',async event=>{
 
 const worksGrid=document.querySelector('[data-works-grid]');
 if(worksGrid){
-  fetch('data/artworks.json?v=20260803c').then(response=>response.json()).then(({artworks})=>{
+  fetch('data/artworks.json?v=20260803-full').then(response=>response.json()).then(({artworks})=>{
     worksGrid.innerHTML=artworks.map(item=>{
       const meta=[item.status,item.dimensions].filter(Boolean).join(' · ');
       const classes=['work',item.featured?'work-featured':'',item.type==='sculpture'?'sculpture':''].filter(Boolean).join(' ');
