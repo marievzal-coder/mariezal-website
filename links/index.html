@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Maryia Zaloznaya — actress and visual artist. Official links, IMDb, art portfolio and Instagram.">
+  <meta name="theme-color" content="#f0efeb">
+  <meta property="og:title" content="Maryia Zaloznaya — Actress &amp; Artist">
+  <meta property="og:description" content="IMDb, art portfolio and Instagram — all in one place.">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://mariezal.com/links/">
+  <meta property="og:image" content="https://mariezal.com/assets/links/maryia-zaloznaya-cover.jpg">
+  <title>Maryia Zaloznaya — Official Links</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&amp;family=Italiana&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #11100e;
+      --paper: #f0efeb;
+      --muted: #696761;
+      --line: rgba(17, 16, 14, .18);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { min-height: 100%; }
+
+    body {
+      min-height: 100svh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: clamp(18px, 4vw, 52px);
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 16% 8%, rgba(255, 255, 255, .95), transparent 38%),
+        linear-gradient(145deg, #deddd8 0%, var(--paper) 48%, #d8d6d0 100%);
+      font-family: Inter, sans-serif;
+      font-weight: 300;
+    }
+
+    .page {
+      width: min(100%, 980px);
+      min-height: min(760px, calc(100svh - 36px));
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(340px, .98fr);
+      overflow: hidden;
+      background: rgba(248, 247, 243, .82);
+      border: 1px solid rgba(255, 255, 255, .78);
+      box-shadow: 0 35px 110px rgba(21, 20, 17, .16);
+      backdrop-filter: blur(18px);
+    }
+
+    .cover {
+      min-height: 680px;
+      margin: 0;
+      position: relative;
+      overflow: hidden;
+      background: #e5e5e3;
+    }
+
+    .cover img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: 48% 50%;
+      filter: contrast(1.02);
+    }
+
+    .cover::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(180deg, transparent 68%, rgba(5, 5, 4, .17));
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(44px, 6vw, 82px);
+    }
+
+    .monogram {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 44px;
+      border: 1px solid var(--ink);
+      border-radius: 50%;
+      font: 400 13px/1 Italiana, serif;
+      letter-spacing: .04em;
+    }
+
+    .role {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font: 400 clamp(46px, 6vw, 72px)/.91 Italiana, serif;
+      letter-spacing: -.035em;
+    }
+
+    .intro {
+      max-width: 390px;
+      margin: 24px 0 40px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .links {
+      display: grid;
+      gap: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .link {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
+      min-height: 78px;
+      padding: 17px 0;
+      color: inherit;
+      border-bottom: 1px solid var(--line);
+      text-decoration: none;
+      transition: padding .25s ease, opacity .25s ease;
+    }
+
+    .link:hover,
+    .link:focus-visible {
+      padding-left: 9px;
+      padding-right: 5px;
+    }
+
+    .link:focus-visible { outline: 1px solid var(--ink); outline-offset: 5px; }
+
+    .link strong {
+      display: block;
+      margin-bottom: 6px;
+      font: 400 20px/1.1 Italiana, serif;
+    }
+
+    .link span {
+      color: var(--muted);
+      font-size: 8px;
+      font-weight: 500;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+
+    .arrow {
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      font-size: 14px;
+    }
+
+    .signature {
+      margin: 38px 0 0;
+      color: var(--muted);
+      font-size: 8px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 720px) {
+      body { display: block; padding: 0; background: var(--paper); }
+
+      .page {
+        min-height: 100svh;
+        grid-template-columns: 1fr;
+        border: 0;
+        box-shadow: none;
+      }
+
+      .cover { min-height: 0; height: clamp(350px, 55svh, 560px); }
+      .cover img { object-position: 48% 43%; }
+
+      .content {
+        justify-content: flex-start;
+        padding: 42px 26px 38px;
+      }
+
+      .monogram { margin-bottom: 32px; }
+      h1 { font-size: clamp(47px, 15vw, 68px); }
+      .intro { margin-bottom: 32px; }
+      .link { min-height: 75px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .link { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <figure class="cover">
+      <img src="../assets/links/maryia-zaloznaya-cover.jpg" alt="Black-and-white portrait of Maryia Zaloznaya" width="902" height="1190">
+    </figure>
+
+    <section class="content" aria-labelledby="page-title">
+      <div class="monogram" aria-hidden="true">MZ</div>
+      <p class="role">Actress · Visual Artist</p>
+      <h1 id="page-title">Maryia<br>Zaloznaya</h1>
+      <p class="intro">Stories lived on screen and transformed on canvas. Explore my work and follow what comes next.</p>
+
+      <nav class="links" aria-label="Official links">
+        <a class="link" href="https://www.imdb.com/name/nm5372554/" target="_blank" rel="noopener noreferrer">
+          <span><strong>IMDb</strong>Acting profile &amp; credits</span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="link" href="https://mariezal.com/">
+          <span><strong>Art Portfolio</strong>Originals, prints &amp; Arcana</span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="link" href="https://www.instagram.com/marie_zal/" target="_blank" rel="noopener noreferrer">
+          <span><strong>Instagram</strong>@marie_zal</span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+      </nav>
+
+      <p class="signature">Los Angeles · Official links</p>
+    </section>
+  </main>
+</body>
+</html>
