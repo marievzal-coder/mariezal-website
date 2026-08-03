@@ -2,16 +2,17 @@ const observer=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.ta
 
 const worksGrid=document.querySelector('[data-works-grid]');
 if(worksGrid){
-  fetch('data/artworks.json?v=20260803b').then(response=>response.json()).then(({artworks})=>{
+  fetch('data/artworks.json?v=20260803c').then(response=>response.json()).then(({artworks})=>{
     worksGrid.innerHTML=artworks.map(item=>{
       const meta=[item.status,item.dimensions].filter(Boolean).join(' · ');
       const classes=['work',item.featured?'work-featured':'',item.type==='sculpture'?'sculpture':''].filter(Boolean).join(' ');
       const description=item.description?`<p class="work-description">${item.description}</p>`:'';
       const action=item.status==='Available'&&item.purchasable!==false?`<a href="contact.html?work=${encodeURIComponent(item.title)}">Buy this work</a>`:'';
       const hasFilm=Boolean(item.video);
+      const imageClass=item.imageClass?` class="${item.imageClass}"`:'';
       const image=hasFilm
-        ? `<button class="work-media" type="button" data-work-film="${item.video}" data-work-poster="${item.videoPoster||item.image}" data-work-title="${item.title}" aria-label="Watch the film for ${item.title}"><img src="${item.image}" alt="${item.title} by Maryia Zaloznaya"><span>View artwork film</span></button>`
-        : `<img src="${item.image}" alt="${item.title} by Maryia Zaloznaya">`;
+        ? `<button class="work-media" type="button" data-work-film="${item.video}" data-work-poster="${item.videoPoster||item.image}" data-work-title="${item.title}" aria-label="Watch the film for ${item.title}"><img${imageClass} src="${item.image}" alt="${item.title} by Maryia Zaloznaya"><span>View artwork film</span></button>`
+        : `<img${imageClass} src="${item.image}" alt="${item.title} by Maryia Zaloznaya">`;
       return `<article class="${classes}">${image}<div><p>${meta}</p><h2>${item.title}</h2>${description}${action}</div></article>`;
     }).join('');
     document.querySelectorAll('[data-work-film]').forEach(button=>button.addEventListener('click',()=>openWorkFilm(button)));
