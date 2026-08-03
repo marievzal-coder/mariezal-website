@@ -2,7 +2,7 @@ const observer=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.ta
 
 const worksGrid=document.querySelector('[data-works-grid]');
 if(worksGrid){
-  fetch('data/artworks.json').then(response=>response.json()).then(({artworks})=>{
+  fetch('data/artworks.json?v=20260803b').then(response=>response.json()).then(({artworks})=>{
     worksGrid.innerHTML=artworks.map(item=>{
       const meta=[item.status,item.dimensions].filter(Boolean).join(' · ');
       const classes=['work',item.featured?'work-featured':'',item.type==='sculpture'?'sculpture':''].filter(Boolean).join(' ');
