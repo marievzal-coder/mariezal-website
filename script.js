@@ -1,4 +1,54 @@
-const observer=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('visible')),{threshold:.08});document.querySelectorAll('.reveal').forEach(e=>observer.observe(e));const menu=document.querySelector('.menu'),nav=document.querySelector('.site-header nav');if(menu)menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.textContent=open?'Close':'Menu'});const params=new URLSearchParams(location.search),work=params.get('work'),workField=document.querySelector('#work-field');if(workField&&work)workField.value=work;const form=document.querySelector('#inquiry-form');if(form)form.addEventListener('submit',e=>{e.preventDefault();const d=new FormData(form),subject=encodeURIComponent(`MARIEZAL inquiry --- ${d.get('interest')}`),body=encodeURIComponent(`Name: ${d.get('name')}\nEmail: ${d.get('email')}\nInterest: ${d.get('interest')}\nArtwork: ${d.get('work')}\n\n${d.get('message')}`);location.href=`mailto:marievzal@gmail.com?subject=${subject}&body=${body}`});
+const observer=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('visible')),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(e=>observer.observe(e));
+
+const nav=document.querySelector('.site-header nav');
+if(nav){
+  const inJournal=location.pathname.includes('/journal/');
+  const prefix=inJournal?'../':'';
+  const sections=[['works.html','Originals'],['prints.html','Prints'],['commissions.html','Commissions'],['about.html','Artist'],['journal.html','Journal'],['arcana.html','Arcana']];
+  const current=location.pathname.split('/').pop()||'index.html';
+  nav.innerHTML=sections.map(([href,label])=>`<a${current===href?' class="active"':''} href="${prefix}${href}">${label}</a>`).join('');
+}
+
+const menu=document.querySelector('.menu');
+if(menu)menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.textContent=open?'Close':'Menu'});
+
+const params=new URLSearchParams(location.search);
+const work=params.get('work');
+const interest=params.get('interest');
+const workField=document.querySelector('#work-field');
+const interestField=document.querySelector('[name="interest"]');
+if(workField&&work)workField.value=work;
+if(interestField&&interest)[...interestField.options].some(option=>{
+  if(option.value===interest){option.selected=true;return true}
+  return false;
+});
+
+const form=document.querySelector('#inquiry-form');
+if(form)form.addEventListener('submit',async event=>{
+  event.preventDefault();
+  const button=form.querySelector('button[type="submit"]');
+  const status=document.querySelector('#form-status');
+  button.disabled=true;
+  button.textContent='Sending…';
+  status.textContent='Sending your inquiry securely…';
+  try{
+    const response=await fetch('https://formsubmit.co/ajax/marievzal@gmail.com',{
+      method:'POST',
+      headers:{Accept:'application/json'},
+      body:new FormData(form)
+    });
+    const result=await response.json();
+    if(!response.ok||result.success===false)throw new Error('Submission failed');
+    form.reset();
+    status.textContent='Thank you. Your inquiry has been sent directly to Maryia.';
+    button.textContent='Inquiry sent ✓';
+  }catch(error){
+    status.textContent='The message could not be sent. Please email marievzal@gmail.com directly.';
+    button.disabled=false;
+    button.textContent='Try again →';
+  }
+});
 
 const worksGrid=document.querySelector('[data-works-grid]');
 if(worksGrid){
@@ -7,7 +57,7 @@ if(worksGrid){
       const meta=[item.status,item.dimensions].filter(Boolean).join(' · ');
       const classes=['work',item.featured?'work-featured':'',item.type==='sculpture'?'sculpture':''].filter(Boolean).join(' ');
       const description=item.description?`<p class="work-description">${item.description}</p>`:'';
-      const action=item.status==='Available'&&item.purchasable!==false?`<a href="contact.html?work=${encodeURIComponent(item.title)}">Buy this work</a>`:'';
+      const action=item.status==='Available'&&item.purchasable!==false?`<a href="contact.html?interest=${encodeURIComponent('Acquiring an original')}&work=${encodeURIComponent(item.title)}">Buy this work</a>`:'';
       const hasFilm=Boolean(item.video);
       const imageClass=item.imageClass?` class="${item.imageClass}"`:'';
       const image=hasFilm

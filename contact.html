@@ -6,7 +6,7 @@
 <title>Private Inquiry --- MARIEZAL</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Italiana&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="v3.css">
+<link rel="stylesheet" href="v3.css?v=20260803-navmail">
 </head>
 <body class="contact-body">
 <header class="site-header">
@@ -16,6 +16,8 @@
 <a href="prints.html">Prints</a>
 <a href="commissions.html">Commissions</a>
 <a href="about.html">Artist</a>
+<a href="journal.html">Journal</a>
+<a href="arcana.html">Arcana</a>
 </nav>
 <a class="nav-cta active" href="contact.html">Private inquiry</a>
 <button class="menu">Menu</button>
@@ -33,7 +35,10 @@
 <a href="tel:+17479774385">+1 747 977 4385</a>
 </div>
 </div>
-<form id="inquiry-form">
+<form id="inquiry-form" action="https://formsubmit.co/marievzal@gmail.com" method="POST">
+<input type="hidden" name="_subject" value="New MARIEZAL website inquiry">
+<input type="hidden" name="_template" value="table">
+<input type="text" name="_honey" tabindex="-1" autocomplete="off" class="form-honeypot" aria-hidden="true">
 <label>Name<input name="name" required>
 </label>
 <label>Email<input name="email" type="email" required>
@@ -54,11 +59,11 @@
 </textarea>
 </label>
 <button class="button light" type="submit">Send private inquiry &rarr;</button>
-<p class="form-note">This opens your email app with the inquiry prepared.</p>
+<p class="form-note" id="form-status" aria-live="polite">Your inquiry will be sent directly to Maryia.</p>
 </form>
 </section>
 </main>
-<script src="script.js">
+<script src="script.js?v=20260803-navmail">
 </script>
 <script src="v3.js">
 </script>
