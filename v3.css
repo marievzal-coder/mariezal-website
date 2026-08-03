@@ -97,3 +97,8 @@
 .studio-learning__offers h3{font:400 clamp(30px,3.2vw,48px)/1.05 Italiana,serif;margin:0 0 18px}
 .studio-learning__offers p{grid-column:2;max-width:560px;line-height:1.85;margin:0}
 @media(max-width:760px){.studio-learning{grid-template-columns:1fr;padding:22vw 7vw;gap:18vw}.studio-learning__intro{position:static}.studio-learning h2{font-size:clamp(48px,14vw,68px)}.studio-learning__offers article{grid-template-columns:38px 1fr}.studio-learning__offers p{grid-column:2}}
+
+/* Full-resolution portrait master with a cinematic ambient layer on wide screens. */
+.home-hero__video--ambient{object-fit:cover;transform:scale(1.035);filter:blur(22px) saturate(.82) brightness(.48);opacity:.88}
+.home-hero__video--master{object-fit:contain;filter:drop-shadow(0 0 60px rgba(0,0,0,.5))}
+@media(max-width:760px){.home-hero__video--ambient{display:none}.home-hero__video--master{object-fit:cover;filter:none}}

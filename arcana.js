@@ -12,29 +12,32 @@
   let audio;
   world.dataset.order = chosen;
 
+  const one = selector => document.querySelector(selector);
+  const all = selector => document.querySelectorAll(selector);
+
   for (let i = 0; i < 24; i++) {
     const ember = document.createElement("i");
     ember.style.setProperty("--i", i);
-    document.querySelector(".arcana-embers").appendChild(ember);
+    one(".arcana-embers").appendChild(ember);
   }
 
   const go = scene => {
     world.dataset.scene = scene;
-    document.querySelectorAll(".arcana-scene").forEach(panel => panel.classList.toggle("active", panel.dataset.panel === scene));
-    scrollTo({ top: 0, behavior: "smooth" });
+    all(".arcana-scene").forEach(panel => panel.classList.toggle("active", panel.dataset.panel === scene));
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  document.querySelectorAll("[data-go]").forEach(button => button.addEventListener("click", () => go(button.dataset.go)));
-  document.querySelectorAll("[data-order-choice]").forEach(button => button.addEventListener("click", () => {
+  all("[data-go]").forEach(button => button.addEventListener("click", () => go(button.dataset.go)));
+  all("[data-order-choice]").forEach(button => button.addEventListener("click", () => {
     chosen = button.dataset.orderChoice;
     world.dataset.order = chosen;
     localStorage.setItem("mariezal-arcana-order", chosen);
     setTimeout(() => go("trial"), 380);
   }));
 
-  const progress = document.querySelector(".arcana-progress");
+  const progress = one(".arcana-progress");
   for (let i = 0; i < 7; i++) progress.appendChild(document.createElement("i"));
-  document.querySelector(".arcana-canvas").addEventListener("click", event => {
+  one(".arcana-canvas").addEventListener("click", event => {
     if (marks >= 7) return;
     const canvas = event.currentTarget;
     const rect = canvas.getBoundingClientRect();
@@ -47,22 +50,22 @@
     canvas.appendChild(crack);
     marks++;
     progress.children[marks - 1].classList.add("done");
-    const whisper = document.querySelector(".arcana-whisper");
+    const whisper = one(".arcana-whisper");
     whisper.textContent = marks === 7 ? "Nothing broken here was ever wasted." : `${7 - marks} lines remain.`;
     if (marks === 7) {
-      document.querySelector(".arcana-finish").classList.add("visible");
+      one(".arcana-finish").classList.add("visible");
       localStorage.setItem("mariezal-arcana-prologue", "complete");
     }
   });
 
-  document.querySelector(".arcana-finish").addEventListener("click", () => {
+  one(".arcana-finish").addEventListener("click", () => {
     const order = orders[chosen] || orders.gold;
-    document.querySelector(".arcana-chosen").textContent = order.sigil;
-    document.querySelector("[data-panel='ending'] h2 span").textContent = order.name;
+    one(".arcana-chosen").textContent = order.sigil;
+    one("[data-panel='ending'] h2 span").textContent = order.name;
   });
 
-  document.querySelector("[data-restart]").addEventListener("click", () => location.reload());
-  document.querySelector(".arcana-sound").addEventListener("click", async event => {
+  one("[data-restart]").addEventListener("click", () => location.reload());
+  one(".arcana-sound").addEventListener("click", async event => {
     if (audio) {
       await audio.close();
       audio = null;

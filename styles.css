@@ -46,3 +46,16 @@ html,body{overflow-x:hidden}main,section,footer,article,div{min-width:0}h1,h2,h3
 .commission-portraits{height:calc(100vh - 82px);min-height:680px;position:relative;overflow:hidden;background:#171914}.commission-portrait{position:absolute;margin:0;overflow:hidden;box-shadow:0 28px 70px rgba(0,0,0,.3)}.commission-portrait img{height:100%;object-fit:cover}.commission-portrait-primary{inset:5.5vw 14% 5vw 7%;z-index:1}.commission-portrait-primary img{object-position:center 38%}.commission-portrait-secondary{width:39%;height:53%;right:5%;bottom:4.5vw;z-index:2;border:8px solid #171914}.commission-portrait-secondary img{object-position:center 26%}.commission-signature{position:absolute;z-index:3;right:5%;top:5vw;margin:0;color:#f7f2e9;text-align:right;font:400 21px/1.15 Italiana,serif;letter-spacing:.03em}.commission-signature span{font:500 7px/1.4 Inter,sans-serif;text-transform:uppercase;letter-spacing:.19em;opacity:.72}
 @media(max-width:760px){.commission-portraits{height:76vh;min-height:610px;order:-1}.commission-portrait-primary{inset:7vw 16% 8vw 5%}.commission-portrait-secondary{width:44%;height:45%;right:4%;bottom:5vw;border-width:6px}.commission-signature{top:auto;right:5%;bottom:52%;font-size:17px}.commission-signature span{font-size:6px}}
 .form-honeypot{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}.contact-page form button:disabled{opacity:.65;cursor:wait}.form-note{min-height:1.4em}
+
+/* Desktop gallery: preserve every artwork's complete composition. */
+@media(min-width:761px){
+  .site-header{grid-template-columns:auto minmax(0,1fr) auto;gap:clamp(22px,3vw,58px)}
+  .site-header nav{justify-content:center;gap:clamp(15px,2vw,34px);min-width:0;white-space:nowrap}
+  .work>img,.work-media img{width:100%;height:auto;max-height:78vh;object-fit:contain}
+}
+@media(min-width:761px) and (max-width:1120px){
+  .site-header{padding-left:2.2vw;padding-right:2.2vw;gap:18px}
+  .site-header nav{gap:13px}
+  .site-header nav a{font-size:8px;letter-spacing:.13em}
+  .nav-cta{display:none}
+}
