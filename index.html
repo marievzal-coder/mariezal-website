@@ -8,8 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Italiana&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20260803-desktop">
-<link rel="stylesheet" href="v3.css?v=20260803-desktop">
+<link rel="stylesheet" href="styles.css?v=20260803-instagram-video">
+<link rel="stylesheet" href="v3.css?v=20260803-instagram-video">
 </head>
 <body class="dark">
 <header class="site-header">
@@ -27,12 +27,11 @@
 </header>
 <main>
 <section class="home-hero">
-<video class="home-hero__video home-hero__video--ambient" autoplay muted loop playsinline preload="auto" poster="assets/video/mariezal-film-cinematic-poster.jpg" aria-hidden="true" tabindex="-1">
-<source src="assets/video/mariezal-film-cinematic.mp4" type="video/mp4">
-</video>
-<video class="home-hero__video home-hero__video--master artist-film__video" autoplay muted loop playsinline preload="auto" poster="assets/video/mariezal-film-cinematic-poster.jpg">
-<source src="assets/video/mariezal-film-cinematic.mp4" type="video/mp4">
-</video>
+<div class="home-hero__fallback" aria-hidden="true">
+<img src="assets/video/mariezal-film-cinematic-poster.jpg" alt="" fetchpriority="high">
+</div>
+<video class="home-hero__video home-hero__video--ambient" muted loop playsinline webkit-playsinline preload="none" poster="assets/video/mariezal-film-cinematic-poster.jpg" data-desktop-src="assets/video/mariezal-film-cinematic.mp4" aria-hidden="true" tabindex="-1"></video>
+<video class="home-hero__video home-hero__video--master artist-film__video" muted loop playsinline webkit-playsinline preload="metadata" poster="assets/video/mariezal-film-cinematic-poster.jpg" data-mobile-src="assets/video/mariezal-film-hq.mp4" data-desktop-src="assets/video/mariezal-film-cinematic.mp4" aria-label="Maryia Zaloznaya in her studio"></video>
 <div class="scrim">
 </div>
 <div class="home-title reveal">
@@ -114,7 +113,7 @@
 </footer>
 <script src="script.js?v=20260803-desktop">
 </script>
-<script src="v3.js">
+<script src="v3.js?v=20260803-instagram-video">
 </script>
 </body>
 </html>

@@ -99,6 +99,9 @@
 @media(max-width:760px){.studio-learning{grid-template-columns:1fr;padding:22vw 7vw;gap:18vw}.studio-learning__intro{position:static}.studio-learning h2{font-size:clamp(48px,14vw,68px)}.studio-learning__offers article{grid-template-columns:38px 1fr}.studio-learning__offers p{grid-column:2}}
 
 /* Full-resolution portrait master with a cinematic ambient layer on wide screens. */
-.home-hero__video--ambient{object-fit:cover;transform:scale(1.035);filter:blur(22px) saturate(.82) brightness(.48);opacity:.88}
-.home-hero__video--master{object-fit:contain;filter:drop-shadow(0 0 60px rgba(0,0,0,.5))}
+.home-hero__fallback{position:absolute;inset:0;background:#090807;overflow:hidden}
+.home-hero__fallback img{width:100%;height:100%;object-fit:cover;object-position:center 42%;filter:saturate(.94) brightness(.82);transform:scale(1.01)}
+.home-hero__video{z-index:1;opacity:0;transition:opacity .45s ease}
+.home-hero.is-playing .home-hero__video--ambient{object-fit:cover;transform:scale(1.035);filter:blur(22px) saturate(.82) brightness(.48);opacity:.88}
+.home-hero.is-playing .home-hero__video--master{object-fit:contain;filter:drop-shadow(0 0 60px rgba(0,0,0,.5));opacity:1}
 @media(max-width:760px){.home-hero__video--ambient{display:none}.home-hero__video--master{object-fit:cover;filter:none}}
